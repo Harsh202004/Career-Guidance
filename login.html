@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="CSS/login.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <title>Login Page</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 mx-auto">
+
+        <!-- Login Form -->
+        <div id="first">
+          <div class="myform form">
+            <div class="logo mb-3 text-center">
+              <h1>Login</h1>
+            </div>
+            <form id="loginForm">
+              <div class="form-group">
+                <label for="login_email">Email address</label>
+                <input type="email" name="email" class="form-control" id="login_email" placeholder="Enter email" required>
+              </div>
+              <div class="form-group">
+                <label for="login_password">Password</label>
+                <input type="password" name="password" id="login_password" class="form-control" placeholder="Enter Password" required>
+              </div>
+              <div class="form-group text-center">
+                <p>By signing up you accept our <a href="#">Terms Of Use</a></p>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-block mybtn btn-primary tx-tfm">Login</button>
+              </div>
+              <div class="text-center my-3 login-or">
+                <hr class="hr-or"><span class="span-or">or</span>
+              </div>
+              <div class="form-group text-center">
+                <p>Don't have an account? <a href="#" id="signup">Sign up here</a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="second" style="display: none;">
+          <div class="myform form">
+            <div class="logo mb-3 text-center">
+              <h1>Signup</h1>
+            </div>
+            <form id="signupForm">
+              <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Enter Firstname" required>
+              </div>
+              <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Enter Lastname" required>
+              </div>
+              <div class="form-group">
+                <label for="signup_email">Email address</label>
+                <input type="email" name="email" class="form-control" id="signup_email" placeholder="Enter email" required>
+              </div>
+              <div class="form-group">
+                <label for="signup_password">Password</label>
+                <input type="password" name="password" id="signup_password" class="form-control" placeholder="Enter Password" required>
+              </div>
+              <div class="form-group">
+                <label for="signup_Cpassword">Confirm Password</label>
+                <input type="password" name="Cpassword" id="signup_Cpassword" class="form-control" placeholder="Confirm Password" required>
+              </div>
+              <div class="text-center mb-3">
+                <button type="submit" class="btn btn-block mybtn btn-primary">Get Started For Free</button>
+              </div>
+              <div class="form-group text-center">
+                <p><a href="#" id="signin">Already have an account?</a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      // Toggle to Signup Form
+      $('#signup').click(function(e) {
+        e.preventDefault();
+        $('#first').hide();
+        $('#second').show();
+      });
+
+      // Toggle to Login Form
+      $('#signin').click(function(e) {
+        e.preventDefault();
+        $('#second').hide();
+        $('#first').show();
+      });
+
+      // Login form submission
+      $('#loginForm').on('submit', function(e) {
+        e.preventDefault();
+        // Add your login logic here (e.g., AJAX request to validate user)
+        window.location.href = 'interest.html';
+      });
+
+      // Signup form submission with password match check
+      $('#signupForm').on('submit', function(e) {
+        e.preventDefault();
+        var password = $('#signup_password').val();
+        var confirmPassword = $('#signup_Cpassword').val();
+        if (password !== confirmPassword) {
+          alert("Passwords do not match!");
+          return;
+        }
+        // Add your signup logic here (e.g., AJAX request to create user)
+        window.location.href = 'login.html';
+      });
+    });
+  </script>
+</body>
+</html>
