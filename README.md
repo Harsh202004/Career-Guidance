@@ -66,20 +66,21 @@ Clone the repository:
 
 git clone https://github.com/Harsh202004/Career-Guidance.git
 Navigate to the project directory:
-'''
-```bash
+```
+```Bash
+
 cd Career-Guidance
 Install backend dependencies:
 Navigate to the server directory and install the required npm packages.
-'''
+```
+```Bash
 
-```bash
 cd server
 npm install
 Install frontend dependencies:
 Navigate to the client directory and install its dependencies.
-'''
-```bash
+```
+```Bash
 
 cd ../client
 npm install
@@ -95,8 +96,8 @@ Navigate to the root Career-Guidance directory.
 
 Run the application:
 This command will start both the backend server (on http://localhost:5000) and the frontend React development server (on http://localhost:3000).
-'''
-```bash
+```
+```Bash
 
 npm run dev
 Open your browser and go to http://localhost:3000 to see the application.
