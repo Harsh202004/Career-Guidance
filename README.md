@@ -62,18 +62,18 @@ Git
 Installation & Setup
 Clone the repository:
 
-'''Bash
+```bash
 
 git clone https://github.com/Harsh202004/Career-Guidance.git
 Navigate to the project directory:
 
-'''Bash
+'''
 
 cd Career-Guidance
 Install backend dependencies:
 Navigate to the server directory and install the required npm packages.
 
-'''Bash
+
 
 cd server
 npm install
